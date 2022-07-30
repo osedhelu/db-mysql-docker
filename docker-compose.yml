@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  mysql:
+    image : mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/db/mysql:/var/lib/mysql
+      - ~/db/mysqld:/var/run/mysqld
+      - ./config.cnf:/etc/mysql/conf.d/config.cnf
+      - ./init-dump:/docker-entrypoint-initdb.d
+    environment:
+      TERM: xterm
+      APP_ENV: dev
+      MYSQL_USER: admin 
+      MYSQL_PASSWORD: ADMadm1234 
+      MYSQL_DATABASE: laravel 
+      MYSQL_ROOT_PASSWORD: 938jfoasdfoijf 
+    container_name: mysql
+    networks:
+      - mysql_networks
+networks:
+  mysql_networks:
+    name: mysql_networks 
+volumes:
+  bundle_cache:
+
