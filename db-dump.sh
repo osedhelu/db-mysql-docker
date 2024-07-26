@@ -7,5 +7,5 @@ if ! docker ps | grep -q mysql; then
 fi
 
 # Ejecuta el comando mysqldump dentro del contenedor
-docker exec -it mysql bash -c 'MYSQL_PWD=ADMadm1234 mysqldump -u admin laravel' > ./backup.sql
+docker exec -it mysql bash -c 'MYSQL_PWD=938jfoasdfoijf mysqldump -u root laravel' > ./backup.sql
 
