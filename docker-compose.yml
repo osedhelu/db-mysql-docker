@@ -23,6 +23,7 @@ services:
       - mysql_network
 networks:
   mysql_network:
+    name: mysql_network
     driver: bridge
 volumes:
   bundle_cache:
